@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Monitoring Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <div class="navbar">
+    <h1>🖥️ System Monitoring Dashboard</h1>
+  </div>
+
+  <div class="container">
+    <div class="left-panel">
+      <div id="host-card" class="card">
+        <h2>📡 Host Details</h2>
+        <ul id="host-details" class="host-details"></ul>
+      </div>
+      
+
+      <div id="history-card" class="card">
+        <h2>📊 Historical Processes</h2>
+        <button id="load-history" class="btn">Load History</button>
+        <button id="hide-history" class="btn danger">Hide History</button>
+
+        <div id="historical-processes"></div>
+        <div id="history-pagination">
+          <button id="prev-page" class="btn">⬅ Prev</button>
+          <span id="page-info"></span>
+          <button id="next-page" class="btn">Next ➡</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div id="live-card" class="card">
+        <h2>⚡ Live Processes</h2>
+        <div id="live-processes"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

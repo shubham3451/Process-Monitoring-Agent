@@ -1,0 +1,6 @@
+{
+    "endpoint": "http://127.0.0.1:8000/api/ingest/",
+    "api_key": "mysecretapikey",
+    "interval": 5,
+    "max_retries": 5
+}
