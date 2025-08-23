@@ -74,7 +74,7 @@ Backend is now running at:
 ### 1️. Go to frontend folder
 
 ```bash
-cd ../frontend
+cd frontend
 ```
 ##  Configuration Changes (before running)
 
@@ -101,7 +101,7 @@ The **agent** collects host details + processes and pushes to the backend.
 ### 1️. Install dependencies
 
 ```bash
-cd ../agent
+cd agent
 ```
 
 
