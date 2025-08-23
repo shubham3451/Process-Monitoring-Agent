@@ -22,7 +22,7 @@ def main():
             process_data = collect_process_data()
 
             system_info = get_system_info()
-
+            print(f"➡ Hostname: {system_info['hostname']}")
             snapshot = {
                 "hostdetails": system_info,
                 "snapshot_time": datetime.utcnow().isoformat(),

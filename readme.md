@@ -46,7 +46,7 @@ system-monitoring/
 
 ```bash
 git clone https://github.com/yourusername/system-monitoring.git
-cd system-monitoring/backend
+cd backend
 python -m venv venv
 source venv/bin/activate   # (Linux/Mac)
 venv\Scripts\activate      # (Windows)
@@ -76,15 +76,21 @@ Backend is now running at:
 ```bash
 cd ../frontend
 ```
+##  Configuration Changes (before running)
 
+* **HOSTNAME** in `frontend/js/dashboard.js`
+
+  ```js
+  const HOSTNAME = "ubuntu";   // change this to must match agent --host
+  ```
 ### 2️. Open in browser
 
-Just open `index.html` in your browser.
-*(If you need CORS handling, serve via `http-server` or Nginx)*
 
+```bash
+python -m http.server 3000
+```
 
-
-Dashboard will be available at → `http://localhost:3000` or `http://localhost:5500`
+Dashboard will be available at → `http://localhost:3000` 
 
 ---
 
@@ -96,15 +102,10 @@ The **agent** collects host details + processes and pushes to the backend.
 
 ```bash
 cd ../agent
-pip install -r requirements.txt
 ```
 
-### 2️. Run agent
 
-```bash
-python agent.py 
-
-### 3️. Bundle agent into `.exe` (Windows)
+### 2. Bundle agent into `.exe` (Windows)
 
 ```bash
 pip install pyinstaller
@@ -125,16 +126,13 @@ agent.exe
 
 ---
 
-##  Configuration Changes (before running)
+Or run it directly 
 
-* **Backend URL** in `frontend/js/dashboard.js`
+### 3. Run agent
 
-  ```js
-  const API_BASE = "http://localhost:8000/api";
-  const WS_URL   = `ws://localhost:8000/ws/hosts/${HOSTNAME}/`
-  const HOSTNAME = "ubuntu";   // must match agent --host
-  ```
-
+```bash
+python agent.py 
+```
 
 
 ##  Common Commands
@@ -142,28 +140,28 @@ agent.exe
 ### Backend
 
 ```bash
-daphne backend.asgi:application -p 8000 or python manage.py runserver(if websocket support not nedded)
+daphne backend.asgi:application -p 8000 
 ```
 
 ### Frontend
 
 ```bash
-python3 -m http.server 3000
+python -m http.server 3000
 ```
 
 
-### Agent
 
-```bash
-python agent.py
-```
 
 ### Build Agent EXE
 
 ```bash
 pyinstaller --onefile agent.py
 ```
+### Agent
 
+```bash
+python agent.py
+```
 ---
 
 ##  Workflow

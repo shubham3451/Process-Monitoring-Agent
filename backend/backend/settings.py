@@ -107,7 +107,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-AGENT_API_KEY = os.getenv("API_KEY")
+AGENT_API_KEY = os.getenv("API_KEY", "mysecretapikey")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
